@@ -79,8 +79,8 @@ def process_to_text_images():
 
 
 def main():
-    #process_to_webp()
-    #process_to_text_images()
+    process_to_webp()
+    process_to_text_images()
     notes_dict = create_notes()
     json_notes_dict = json.dumps(notes_dict)
     response = requests.post("http://localhost:8765", data=json_notes_dict)
