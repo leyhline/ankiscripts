@@ -70,12 +70,12 @@ def create_notes():
 
 def process_to_webp():
     mkdir("webp")
-    run(["mogrify", "-format", "webp", "-quality", "30", "-resize", "960x540", "*.png", "-path", "webp", "*.png"])
+    run(["mogrify", "-path", "webp", "-format", "webp", "-quality", "30", "-resize", "960x540", "*.png", "*.png"])
 
 
 def process_to_text_images():
     mkdir("text")
-    run(["mogrify", "-format", "png", "-crop", "648x90+271+593", "+repage", "-colorspace", "gray", "-color-threshold", "gray(50%)-gray(100%)", "-path", "text", "*.png"])
+    run(["mogrify", "-path", "text", "-format", "png", "-crop", "531x106+624+496", "+repage", "-colorspace", "gray", "-color-threshold", "gray(50%)-gray(100%)", "*.png"])
 
 
 def main():
